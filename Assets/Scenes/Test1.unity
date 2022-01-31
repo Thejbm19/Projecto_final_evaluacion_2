@@ -204,6 +204,50 @@ Transform:
   m_Father: {fileID: 206314724}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &200436719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200436721}
+  - component: {fileID: 200436720}
+  m_Layer: 0
+  m_Name: disparo_enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &200436720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200436719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c6a7288f3e9fa4cb741f3ac92000b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6071823393627953921, guid: 0d7682e98f4ba50498dc585405c28c68, type: 3}
+--- !u!4 &200436721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200436719}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.17400002, y: 0.06982625, z: -0.72599983}
+  m_LocalScale: {x: 1, y: 0.4952211, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1433753880}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &206314722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1159,7 @@ GameObject:
   - component: {fileID: 1433753876}
   - component: {fileID: 1433753881}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Enemy
   m_TagString: Diana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,7 +1253,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.64, y: 1.92, z: 6.97}
   m_LocalScale: {x: 1, y: 2.0193, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 200436721}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

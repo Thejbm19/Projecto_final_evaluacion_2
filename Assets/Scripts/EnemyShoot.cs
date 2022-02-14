@@ -14,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Tanque");
-       // InvokeRepeating("shootEnemy", startTime, repeatRate);
+        InvokeRepeating("shootEnemy", startTime, repeatRate);
     }
 
     // Update is called once per frame

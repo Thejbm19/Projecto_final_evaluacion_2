@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 50f;
     private float horizontalInput;
     private float verticalInput;
+    public GameObject disparoPos;
     
 
     void Start()
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position * 2.5f, gameObject.transform.rotation);
+            Instantiate(projectilePrefab, disparoPos.transform.position, gameObject.transform.rotation);
         }
     }
 }

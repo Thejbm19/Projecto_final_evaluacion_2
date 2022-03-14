@@ -17,4 +17,14 @@ public class MoveForward : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speedBullet * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider otherCollider)
+    {
+        if (otherCollider.gameObject.CompareTag("Bala_Enemy"))
+        {
+            
+            Destroy(otherCollider.gameObject);
+        }
+
+    }
 }

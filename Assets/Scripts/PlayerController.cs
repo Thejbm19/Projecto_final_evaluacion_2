@@ -10,11 +10,20 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     public GameObject disparoPos;
+    private float xRange = 7.5f;
+    private float xRAnge = -7.5f;
+    public bool gameOver;
+    public ParticleSystem explosionParticleSystem;
+    public AudioClip deathClip;
     
+
+
 
     void Start()
     {
+        gameOver = false;
         
+
     }
 
     // Update is called once per frame
@@ -34,5 +43,27 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, disparoPos.transform.position, gameObject.transform.rotation);
         }
+
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x < xRAnge)
+        {
+            transform.position = new Vector3(xRAnge, transform.position.y, transform.position.z);
+        }
+
+       
     }
+
+    public void Gameover()
+    {
+        gameOver = true;
+        explosionParticleSystem = Instantiate(explosionParticleSystem, transform.position, transform.rotation);  
+        explosionParticleSystem.Play();
+        
+    }
+
+    
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bala
   - Diana
+  - Bala_Enemy
   layers:
   - Default
   - TransparentFX

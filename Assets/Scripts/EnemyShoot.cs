@@ -8,35 +8,30 @@ public class EnemyShoot : MonoBehaviour
     private float startTime = 2f;
     private float repeatRate = 1.5f;
     private GameObject player;
-    private GameObject area;
+    public GameObject PosShoot;
+    private PlayerController PlayerScript;
+    
     
 
     void Start()
     {
         player = GameObject.Find("Tanque");
         InvokeRepeating("shootEnemy", startTime, repeatRate);
+        PlayerScript = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform.position);
+        if(!PlayerScript.gameOver)
+        {
+            transform.LookAt(player.transform.position);
+        }  
     }
 
     public void shootEnemy()
     {
-        Instantiate(projectilePrefab, transform.position, gameObject.transform.rotation);
-    }
-
-    private void OnCollisionEnter(Collision otherCollider)
-    {
-
-        if (otherCollider.gameObject.CompareTag("Player"))
-        {
-          shootEnemy();
-        }
-
-        
+        Instantiate(projectilePrefab, PosShoot.transform.position, gameObject.transform.rotation);
     }
 
 }

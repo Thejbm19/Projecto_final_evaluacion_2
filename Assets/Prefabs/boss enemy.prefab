@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7506357337949387863}
+  - component: {fileID: 233299031664902246}
   m_Layer: 0
   m_Name: boss enemy
   m_TagString: Untagged
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7160759240014882541}
-  m_LocalRotation: {x: -0, y: 0.7107476, z: -0, w: 0.7034471}
+  m_LocalRotation: {x: 0, y: 0.71075034, z: 0, w: 0.7034444}
   m_LocalPosition: {x: 0, y: 11.34, z: 110.5}
   m_LocalScale: {x: 461.50702, y: 461.50702, z: 461.50702}
   m_Children:
@@ -196,6 +197,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.592, z: 0}
+--- !u!65 &233299031664902246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160759240014882541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014311851, y: 0.05276457, z: 0.051687922}
+  m_Center: {x: 0.0014146339, y: 0.000045016255, z: 0.000082667735}
 --- !u!1 &7384624489297755887
 GameObject:
   m_ObjectHideFlags: 0

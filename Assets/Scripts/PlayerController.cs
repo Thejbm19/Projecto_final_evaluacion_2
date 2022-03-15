@@ -15,14 +15,18 @@ public class PlayerController : MonoBehaviour
     public bool gameOver;
     public ParticleSystem explosionParticleSystem;
     public AudioClip deathClip;
+    private AudioSource cameraAudioSource;
     
+
 
 
 
     void Start()
     {
         gameOver = false;
+        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         
+
 
     }
 
@@ -62,7 +66,8 @@ public class PlayerController : MonoBehaviour
         gameOver = true;
         explosionParticleSystem = Instantiate(explosionParticleSystem, transform.position, transform.rotation);  
         explosionParticleSystem.Play();
-        
+        cameraAudioSource.PlayOneShot(deathClip, 1);
+
     }
 
     

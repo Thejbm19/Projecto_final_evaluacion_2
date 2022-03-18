@@ -28,9 +28,10 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         
-        range = Vector3.Distance(player.transform.position, transform.position);
+       
         if (!PlayerScript.gameOver)
         {
+            range = Vector3.Distance(player.transform.position, transform.position);
             transform.LookAt(player.transform.position);
             
         }
@@ -40,7 +41,7 @@ public class EnemyShoot : MonoBehaviour
 
     public void shootEnemy()
     {
-        if (range <= dis)
+        if (range <= dis && !PlayerScript.gameOver)
         {
             Instantiate(projectilePrefab, PosShoot.transform.position, gameObject.transform.rotation);
         }

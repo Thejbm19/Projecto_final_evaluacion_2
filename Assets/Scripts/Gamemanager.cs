@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Gamemanager : MonoBehaviour
     public GameObject jefeprefab;
     public int totalEnemies;
     public Vector3 jefepos = new Vector3(0, 11.34f, 110.5f);
+    public TextMeshProUGUI enemiesNumber;
+    private int enemyNumber = 0;
 
     void Start()
     {
@@ -18,6 +21,7 @@ public class Gamemanager : MonoBehaviour
              totalEnemies++;
          }
 
+        enemiesNumber.text = totalEnemies.ToString();
       
     }
 
@@ -31,5 +35,10 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    
+    public void EnemyKilled()
+    {
+        totalEnemies--;
+        enemiesNumber.text = totalEnemies.ToString();
+    }
+
 }

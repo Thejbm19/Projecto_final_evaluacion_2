@@ -5,10 +5,12 @@ using UnityEngine;
 public class DetectCollider : MonoBehaviour
 {
     private int lives = 3;
+    public Gamemanager gamemanagerscript;
     
     void Start()
     {
         lives = 3;
+        gamemanagerscript = FindObjectOfType<Gamemanager>();
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class DetectCollider : MonoBehaviour
             lives--; // lives -= 1;
             if (lives <= 0)
             {
+                gamemanagerscript.EnemyKilled();
                     Destroy(gameObject);
             }
                

@@ -47,8 +47,5 @@ public class EnemyShoot : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        gameManagerScript.totalEnemies--;
-    }
+    
 }

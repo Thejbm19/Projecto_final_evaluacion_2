@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     public GameObject disparoPos;
     private float xRange = 7.5f;
-    private float xRAnge = -7.5f;
     private float zRange = -22f;
     public bool gameOver;
     public ParticleSystem explosionParticleSystem;
     public AudioClip deathClip;
     private AudioSource cameraAudioSource;
     public bool shootLimit;
+    public Gamemanager gamemanagerScript;
 
 
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         gameOver = false;
         cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         shootLimit = true;
-
+        gamemanagerScript = FindObjectOfType<Gamemanager>();
 
     }
 
@@ -56,21 +56,22 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x < xRAnge)
+        if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(xRAnge, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
 
-       /* if (transform.position.z < zRange)
+        if (transform.position.z < zRange)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }*/
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
+        }
 
 
     }
 
     public void Gameover()
     {
+        gamemanagerScript.Losing();
         gameOver = true;
         explosionParticleSystem = Instantiate(explosionParticleSystem, transform.position, transform.rotation);
         explosionParticleSystem.Play();
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator shootLimits()
     {
         shootLimit = false;
-        yield return new  WaitForSeconds(1f);
+        yield return new  WaitForSeconds(0.5f);
         shootLimit = true;
 
     }

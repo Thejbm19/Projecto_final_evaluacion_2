@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DetectCollider : MonoBehaviour
 {
-    private int lives = 3;
+    private int lives = 1;
     public Gamemanager gamemanagerscript;
     
     void Start()
     {
-        lives = 3;
+        lives = 1;
         gamemanagerscript = FindObjectOfType<Gamemanager>();
     }
 
@@ -29,7 +29,7 @@ public class DetectCollider : MonoBehaviour
             if (lives <= 0)
             {
                 gamemanagerscript.EnemyKilled();
-                    Destroy(gameObject);
+                Destroy(gameObject);
             }
                
         }

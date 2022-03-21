@@ -11,7 +11,6 @@ public class Gamemanager : MonoBehaviour
     private int totalEnemies;
     public Vector3 jefepos = new Vector3(0, 11.34f, 110.5f);
     public TextMeshProUGUI enemiesNumber;
-    private int enemyNumber = 0;
     public bool isBossSpawned;
     public GameObject winPanel;
     public GameObject losePanel;
@@ -19,7 +18,7 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
-         foreach(Vector3 pos in spawnPositions)
+         foreach(Vector3 pos in spawnPositions) //Bucle para instanciar las torretas en posiciones especificas
          {
              Instantiate(enemyprefab, pos, Quaternion.identity);
              totalEnemies++;
@@ -35,7 +34,7 @@ public class Gamemanager : MonoBehaviour
 
   
 
-    public void EnemyKilled()
+    public void EnemyKilled() //Funcion para determinar si el enemigo esta "Muerto" se ejecutan unas acciones
     {
         if (isBossSpawned == false)
         {
@@ -49,13 +48,13 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    public void Winning()
+    public void Winning() //Funcion de ganar
     {
         winPanel.SetActive(true);
         Time.timeScale = 0;
     }
 
-    public void Losing()
+    public void Losing() //Funcion que te muestra fin del juego en texto
     {
         losePanel.SetActive(true);
     }

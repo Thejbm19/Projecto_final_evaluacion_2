@@ -25,17 +25,17 @@ public class BossCollider : MonoBehaviour
     {
 
 
-        if (otherCollider.gameObject.CompareTag("Bala"))
+        if (otherCollider.gameObject.CompareTag("Bala")) //Condicion de colision
         {
             Destroy(otherCollider.gameObject);
             lives--; // lives -= 1;
-            if (lives <= 0)
+            if (lives <= 0)  //Si llega a zero vidas del jefe se muere
             {
                 gamemanagerScript.Winning();
                 Destroy(gameObject);
             }
 
-            if (lives <= 5 && endFive == false)
+            if (lives <= 5 && endFive == false) //si llega a 5 se spawnean enemigos
             {
                 foreach (Vector3 pos in SpawnPositions)
                 {

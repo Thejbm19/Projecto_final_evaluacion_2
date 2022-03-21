@@ -5,17 +5,14 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
 
-    public float speedBullet = 10f;
+    private float speedBullet = 5f;
     
-    void Start()
-    {
-        
-    }
+    
 
    
     void Update()
     {
-        transform.Translate(Vector3.forward * speedBullet * Time.deltaTime);
+        transform.Translate(Vector3.forward * speedBullet * Time.deltaTime); // Movimiento de la bala
     }
 
     private void OnTriggerEnter(Collider otherCollider)

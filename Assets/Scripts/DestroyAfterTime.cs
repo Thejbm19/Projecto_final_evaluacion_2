@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class DestroyAfterTime : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
+   
     void Update()
     {
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 3);  //Destruye la bal despues de 3 segundos
     }
 }

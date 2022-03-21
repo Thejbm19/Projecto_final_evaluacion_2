@@ -24,12 +24,12 @@ public class EnemyShoot : MonoBehaviour
         gameManagerScript = FindObjectOfType<Gamemanager>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         
        
-        if (!PlayerScript.gameOver)
+        if (!PlayerScript.gameOver) //Condicion de si el player no esta muerto se ejecuta
         {
             range = Vector3.Distance(player.transform.position, transform.position);
             transform.LookAt(player.transform.position);
@@ -39,7 +39,7 @@ public class EnemyShoot : MonoBehaviour
         
     }
 
-    public void shootEnemy()
+    public void shootEnemy() //Para dispara las balas
     {
         if (range <= dis && !PlayerScript.gameOver)
         {

@@ -22,7 +22,7 @@ public class DetectCollider : MonoBehaviour
     {
         
         
-        if (otherCollider.gameObject.CompareTag("Bala"))
+        if (otherCollider.gameObject.CompareTag("Bala")) //Condicion de si bala es golpeado o golpea
         {
             Destroy(otherCollider.gameObject);
             lives--; // lives -= 1;

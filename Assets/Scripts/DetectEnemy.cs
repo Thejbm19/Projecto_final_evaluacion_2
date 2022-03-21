@@ -9,7 +9,7 @@ public class DetectEnemy : MonoBehaviour
 
     void Start()
     {
-        PlayerScript = FindObjectOfType<PlayerController>();
+        PlayerScript = FindObjectOfType<PlayerController>(); //Conectar scripts
     }
 
     
@@ -22,7 +22,7 @@ public class DetectEnemy : MonoBehaviour
     {
 
        
-        if (otherCollider.gameObject.CompareTag("Player"))
+        if (otherCollider.gameObject.CompareTag("Player")) //Condicion de colision entre bala y player
         {
             PlayerScript.Gameover();
             Destroy(otherCollider.gameObject);

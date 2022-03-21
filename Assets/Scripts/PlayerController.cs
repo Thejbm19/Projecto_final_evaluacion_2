@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public float speed = 50f;
-    public float turnSpeed = 50f;
+    private float speed = 15f;
+    private float turnSpeed = 40f;
     private float horizontalInput;
     private float verticalInput;
     public GameObject disparoPos;
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem explosionParticleSystem;
     public AudioClip deathClip;
     private AudioSource cameraAudioSource;
-    public bool shootLimit;
+    private bool shootLimit;
     public Gamemanager gamemanagerScript;
 
 
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameOver = false;
-        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>(); //Encontrar al componente audiosource de la camara
         shootLimit = true;
         gamemanagerScript = FindObjectOfType<Gamemanager>();
 
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Gameover()
+    public void Gameover() //Funcion de gameover
     {
         gamemanagerScript.Losing();
         gameOver = true;
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public IEnumerator shootLimits()
+    public IEnumerator shootLimits() //Es para evitar poder spamear balas
     {
         shootLimit = false;
         yield return new  WaitForSeconds(0.5f);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
 
-    public float speedBullet = 5f;
+    public float speedBullet = 10f;
     
     void Start()
     {

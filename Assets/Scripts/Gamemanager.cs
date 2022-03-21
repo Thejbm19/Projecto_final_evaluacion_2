@@ -52,6 +52,7 @@ public class Gamemanager : MonoBehaviour
     public void Winning()
     {
         winPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Losing()
